@@ -8,7 +8,7 @@ import Pages from "./pages/Pages";
 function App() {
   return (
     <div className="App">
-      <h1>heloo</h1>
+      
       <BrowserRouter>
         <Category />
         <Pages />
