@@ -6,24 +6,32 @@ import React from 'react'
 
 function Category() {
   return (
-    <List>
-        <Slink to = {'/cuisine/Italian'}>
-            <FaPizzaSlice />
-            <h4>Italian</h4>
-        </Slink>
-        <Slink to = {'/cuisine/American'}>
+    <div className='flex space-x-4 justify-center mt-5 mb-5'>
+      
+
+        <NavLink to = {'/cuisine/Italian'}
+        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
+            <FaPizzaSlice 
+            className=''/>
+            <h4 className='ml-1'>Italian</h4>
+        </NavLink>
+      
+        <NavLink to = {'/cuisine/American'}
+        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <FaHamburger />
             <h4>American</h4>
-        </Slink>
-        <Slink to = {'/cuisine/Thai'}>
+        </NavLink>
+        <NavLink to = {'/cuisine/Thai'}
+        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <GiNoodles />
             <h4>Thai</h4>
-        </Slink>
-        <Slink to = {'/cuisine/Japanese'}>
+        </NavLink>
+        <NavLink to = {'/cuisine/Japanese'}
+        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <GiChopsticks />
             <h4>Japanese</h4>
-        </Slink>
-    </List>
+        </NavLink>
+    </div>
   )
 }
 const List = styled.div `
@@ -73,3 +81,21 @@ const Slink = styled(NavLink)`
 `
 export default Category
 
+{/* <List>
+        <Slink to = {'/cuisine/Italian'}>
+            <FaPizzaSlice />
+            <h4>Italian</h4>
+        </Slink>
+        <Slink to = {'/cuisine/American'}>
+            <FaHamburger />
+            <h4>American</h4>
+        </Slink>
+        <Slink to = {'/cuisine/Thai'}>
+            <GiNoodles />
+            <h4>Thai</h4>
+        </Slink>
+        <Slink to = {'/cuisine/Japanese'}>
+            <GiChopsticks />
+            <h4>Japanese</h4>
+        </Slink>
+    </List> */}

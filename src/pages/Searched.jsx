@@ -24,7 +24,7 @@ function Searched() {
                     <Link to={"/recipe/"+ item.id}>
 
                     <img src= {item.image} alt='' />
-                    <h4>{item.title}</h4>
+                    <h4 className='text-rose-800'>{item.title}</h4>
                     </Link>
                 </Card>
             )
@@ -52,3 +52,19 @@ const Card = styled.div`
     }
 `
 export default Searched
+
+
+{/* <Grid>
+        {searchedRecipes.map((item) => {
+
+            return(
+                <Card key={item.id}>
+                    <Link to={"/recipe/"+ item.id}>
+
+                    <img src= {item.image} alt='' />
+                    <h4>{item.title}</h4>
+                    </Link>
+                </Card>
+            )
+        })}
+    </Grid> */}

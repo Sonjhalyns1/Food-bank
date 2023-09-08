@@ -20,40 +20,50 @@ function Recipe() {
 
   },[params.name]);
   return (
-    <DetailWrapper>
+    <div>
       <div>
-        <h2>{details.title}</h2>
-        <img src= {details.image} alt= "" />
-      </div>
-      <Info>
-        <Button 
-        className={activeTab === 'instructions' ? "active": ""} 
-        onClick={() => setActiveTab("instructions")}>
-          Intructions
-        </Button>
-        <Button 
-        className={activeTab === 'ingredients' ? "active": ""} 
-        onClick={() => setActiveTab("ingredients")}
-        >
-          Ingredients
-        </Button>
-        {activeTab === "instructions" && (
-        <div>
-          <h3 dangerouslySetInnerHTML={{__html: details.summary }}></h3>
-          <h3 dangerouslySetInnerHTML={{__html: details.instructions }}></h3>
+        <h2 className='text-center text-bold text-rose-800 text-xl mb-5'>{details.title}</h2>
+        <div className='flex space-x-2 justify-center'>
+          <button 
+          className={activeTab === 'instructions' ? "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-300 hover:bg-rose-500 hover:border-rose-500 rounded-lg": "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-100 hover:bg-rose-500 hover:border-rose-500 rounded-lg"} 
+          onClick={() => setActiveTab("instructions")}>
+            Intructions
+          </button>
+          <button
+          
+          className= {activeTab === 'ingredients' ? "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-300 hover:bg-rose-500 hover:border-rose-500 rounded-lg": "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-100 hover:bg-rose-500 hover:border-rose-500 rounded-lg"}
+          onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </button>
         </div>
-
-        )}
-        {activeTab === "ingredients" && (
-          <ul>
-          {details.extendedIngredients.map((ingredient) =>
-          <li key={ingredient.id}>{ingredient.original}</li>
-          )}
-        </ul>
-        )}
         
-      </Info>
-    </DetailWrapper>
+      </div>
+      <div className='flex justify-center flex-wrap items-center px-6 py-12 max-w-10xl mx-auto'>
+        <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6 '>
+
+          <img className='rounded-lg' src= {details.image} alt= "" />
+        </div>
+        <div className='w-full md:w-[75%] lg:w-[40%] lg:ml-10'>
+
+          {activeTab === "instructions" && (
+          <div>
+            <h3 className='text-sm' dangerouslySetInnerHTML={{__html: details.summary }}></h3>
+            <h3 className='text-sm' dangerouslySetInnerHTML={{__html: details.instructions }}></h3>
+          </div>
+
+          )}
+          {activeTab === "ingredients" && (
+            <ul>
+            {details.extendedIngredients.map((ingredient) =>
+            <li key={ingredient.id}>{ingredient.original}</li>
+            )}
+          </ul>
+          )}
+        </div>
+        
+      </div>
+    </div>
   )
 }
 const DetailWrapper = styled.div`
@@ -90,3 +100,38 @@ const Info = styled.div`
 `
 
 export default Recipe
+
+{/* <DetailWrapper>
+      <div>
+        <h2>{details.title}</h2>
+        <img src= {details.image} alt= "" />
+      </div>
+      <Info>
+        <Button 
+        className={activeTab === 'instructions' ? "active": ""} 
+        onClick={() => setActiveTab("instructions")}>
+          Intructions
+        </Button>
+        <Button 
+        className={activeTab === 'ingredients' ? "active": ""} 
+        onClick={() => setActiveTab("ingredients")}
+        >
+          Ingredients
+        </Button>
+        {activeTab === "instructions" && (
+        <div>
+          <h3 dangerouslySetInnerHTML={{__html: details.summary }}></h3>
+          <h3 dangerouslySetInnerHTML={{__html: details.instructions }}></h3>
+        </div>
+
+        )}
+        {activeTab === "ingredients" && (
+          <ul>
+          {details.extendedIngredients.map((ingredient) =>
+          <li key={ingredient.id}>{ingredient.original}</li>
+          )}
+        </ul>
+        )}
+        
+      </Info>
+    </DetailWrapper> */}

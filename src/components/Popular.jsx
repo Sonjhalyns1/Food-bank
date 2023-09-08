@@ -36,10 +36,25 @@ function Popular() {
                     <h3>Popular Picks</h3>
                     <Splide options={{
                             perPage: 4,
-                            arrows: false,
+                            breakpoints: {
+                              1500: {
+                                perPage: 3,
+                               
+                              },
+                              1200: {
+                                perPage: 2,
+                            
+                              },
+                              840: {
+                                perPage: 1,
+                          
+                              },
+                            },
+                            focus: "center",
+                            gap: '1em',
+                            updateOnMove : true,
                             pagination: false,
-                            drag: "free",
-                            gap: "5rem",
+                            arrows: false,
                         
                     }}>
 

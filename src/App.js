@@ -9,18 +9,22 @@ import { GiKnifeFork } from "react-icons/gi";
 
 function App() {
   return (
-    <div className="App">
-      
-      <BrowserRouter>
+    <div className="App ">
+      <div className="max-x-xl mx-auto">
+        <BrowserRouter>
       <Nav>
-        <GiKnifeFork />
-        <Logo to = {"/" }>Tasty</Logo>
+        <GiKnifeFork className="text-rose-500"/>
+        <Logo to = {"/" }
+        className="text-rose-500">Tasty</Logo>
       </Nav>
       <Search />
         <Category />
         <Pages />
       </BrowserRouter>
     </div>
+      </div>
+      
+      
   );
 }
 const Logo = styled(Link)`

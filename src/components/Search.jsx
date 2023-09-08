@@ -15,19 +15,38 @@ function Search() {
     };
 
   return (
-    <FormStyle onSubmit = {submitHandler}>
+    <div className='flex justify-center'>
+
+        <form onSubmit = {submitHandler}>
+            
+            <div className=' w-full'>
+                
+                
         
-        <div>
-            <FaSearch />
-            <input 
-                onChange= {(e) => setInput(e.target.value)}    
-                type='text' 
-                value={input}/>
-        </div>
-        
-        
-        
-    </FormStyle>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <FaSearch 
+                        className='text-rose-400'/>
+                    </div>
+                    <input 
+                            onChange= {(e) => setInput(e.target.value)}    
+                            type='text' 
+                            value={input}
+                            placeholder='Search meal'
+                            className='w-full px-8 py-2 pl- 10 text-xl text-gray-700 bg-rose-100 border-black rounded transition ease-in-out '/>
+                
+                    <button type="submit" class="text-gray-700 absolute right-10.5 bottom-1 bg-rose-400 hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                </div>
+
+
+                    
+            </div>
+            
+            
+            
+        </form>
+    </div>
+    
   )
 }
 const FormStyle= styled.form`
@@ -61,3 +80,16 @@ const FormStyle= styled.form`
 `
 
 export default Search
+{/* <FormStyle onSubmit = {submitHandler}>
+        
+        <div>
+            <FaSearch />
+            <input 
+                onChange= {(e) => setInput(e.target.value)}    
+                type='text' 
+                value={input}/>
+        </div>
+        
+        
+        
+    </FormStyle> */}

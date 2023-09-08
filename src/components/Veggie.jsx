@@ -28,17 +28,34 @@ function Veggie() {
 
     }
   return (
-    <div>
+    <div className=''>
         
             
     <Wrapper>
-        <h3>Veggie Picks</h3>
+        <h3 className=''>Veggie Picks</h3>
         <Splide options={{
+                
+                
                 perPage: 4,
-                arrows: false,
+                breakpoints: {
+                  1500: {
+                    perPage: 3,
+                   
+                  },
+                  1200: {
+                    perPage: 2,
+                
+                  },
+                  840: {
+                    perPage: 1,
+              
+                  },
+                },
+                focus: "center",
+                gap: '1em',
+                updateOnMove : true,
                 pagination: false,
-                drag: "free",
-                gap: "5rem",
+                arrows: false,
             
         }}>
 
@@ -46,11 +63,14 @@ function Veggie() {
             return (
                 <SplideSlide key={recipe.id}>
 
-                <Card>
+                <Card className='max-w-xl mx-auto'>
                 <Link to={"/recipe/"+ recipe.id}>
 
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt = {recipe.image} />
+                    <p className='text-rose-700 '>{recipe.title}</p>
+                    <img 
+                    className='h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30'
+                    src={recipe.image} 
+                    alt = {recipe.image} />
                     <Gradient />
                 </Link>
                 </Card>
@@ -84,11 +104,11 @@ object-fit: cover;
 }
 p{
 position: absolute;
-z-index: 10;
+z-index: 50;
 left: 50%;
 bottom: 0%;
 transform: translate(-50%, 0%);
-color: white;
+
 width: 100%;
 text-align: center;
 font-weight: 600;
@@ -108,3 +128,40 @@ background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5))
 
 `
 export default Veggie
+
+
+{/* <div className=''>
+        
+            
+        <Wrapper>
+            <h3 className=''>Veggie Picks</h3>
+            <Splide options={{
+                    perPage: 4,
+                    arrows: false,
+                    pagination: false,
+                    drag: "free",
+                    gap: "5rem",
+                
+            }}>
+    
+            {veggie.map((recipe) =>{
+                return (
+                    <SplideSlide key={recipe.id}>
+    
+                    <Card className='max-w-xl mx-auto'>
+                    <Link to={"/recipe/"+ recipe.id}>
+    
+                        <p>{recipe.title}</p>
+                        <img src={recipe.image} alt = {recipe.image} />
+                        <Gradient />
+                    </Link>
+                    </Card>
+                    </SplideSlide>
+                );
+            })}
+            </Splide>
+        </Wrapper>
+    
+    
+    
+    </div> */}
