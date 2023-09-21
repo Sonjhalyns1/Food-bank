@@ -4,22 +4,36 @@ import Pages from "./pages/Pages";
 import Search from "./components/Search";
 import styled from 'styled-components';
 import { GiKnifeFork } from "react-icons/gi";
+import Navbar from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import Spinner from "./components/Spinner";
 
 
 
 function App() {
+  
   return (
     <div className="App ">
-      <div className="max-x-xl mx-auto">
+      <div className="">
         <BrowserRouter>
-      <Nav>
-        <GiKnifeFork className="text-rose-500"/>
-        <Logo to = {"/" }
-        className="text-rose-500">Tasty</Logo>
-      </Nav>
-      <Search />
-        <Category />
+        
+      <Navbar />
+      
+        {/* <Category /> */}
         <Pages />
+        <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       </BrowserRouter>
     </div>
       </div>

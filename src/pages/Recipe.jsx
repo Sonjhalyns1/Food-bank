@@ -1,28 +1,56 @@
+import { getAuth } from 'firebase/auth';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useEffect, useState} from 'react'
-
-
+import {GrSave} from "react-icons/gr"
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import { styled } from 'styled-components';
+import { db } from '../firebase';
 
 
 function Recipe() {
+  const auth = getAuth();
   let params = useParams();
   const [details, setDetails] = useState([]);
   const [activeTab, setActiveTab] = useState("instructions");
-  const fetchDetails = async() => {
+
+  const fetchDetails = async () => {
     const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
     const detailData = await data.json();
     setDetails(detailData);
   }
+
+  const saveMeal = async () => {
+    try {
+      const user = auth.currentUser;
+      if (user) {
+        const mealData = {
+          name: params.name,
+          timestamp: serverTimestamp(),
+          uid: user.uid,
+          title: details.title,
+          img: details.image
+        };
+
+        const docRef = await addDoc(collection(db, 'meals'), mealData);
+        toast.success('Meal saved successfully!');
+      } else {
+        toast.error('User not authenticated. Please sign in.');
+      }
+    } catch (error) {
+      console.error('Error saving meal:', error);
+      toast.error('Error saving meal. Please try again later.');
+    }
+  }
+
   useEffect(() => {
     fetchDetails();
-
-  },[params.name]);
+  }, [params.name]);
   return (
     <div>
       <div>
-        <h2 className='text-center text-bold text-rose-800 text-xl mb-5'>{details.title}</h2>
+        <h2 className='mt-7 text-center text-bold text-rose-800 text-xl mb-5'>{details.title}</h2>
         <div className='flex space-x-2 justify-center'>
           <button 
           className={activeTab === 'instructions' ? "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-300 hover:bg-rose-500 hover:border-rose-500 rounded-lg": "text-gray-600 group border-2 px-8 py-3 my-2 flex bg-rose-100 hover:bg-rose-500 hover:border-rose-500 rounded-lg"} 
@@ -43,6 +71,17 @@ function Recipe() {
         <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6 '>
 
           <img className='rounded-lg' src= {details.image} alt= "" />
+          <form onSubmit={(e) => {
+          e.preventDefault();
+          saveMeal();
+        }}>
+          <div className='flex border w-[90px] items-center justify-center rounded-xl bg-rose-200 p-2 mt-2 space-x-1 '>
+            <GrSave />
+
+            <button type="submit">Save</button>
+          </div>
+        </form>
+          
         </div>
         <div className='w-full md:w-[75%] lg:w-[40%] lg:ml-10'>
 

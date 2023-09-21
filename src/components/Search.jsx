@@ -19,7 +19,7 @@ function Search() {
 
         <form onSubmit = {submitHandler}>
             
-            <div className=' w-full'>
+            <div className='flex space-x-1'>
                 
                 
         
@@ -33,10 +33,11 @@ function Search() {
                             type='text' 
                             value={input}
                             placeholder='Search meal'
-                            className='w-full px-8 py-2 pl- 10 text-xl text-gray-700 bg-rose-100 border-black rounded transition ease-in-out '/>
+                            className='w-full px-8 py-2 pl-10 border border-rose-100 text-xl text-gray-700   rounded-lg transition ease-in-out '/>
                 
-                    <button type="submit" class="text-gray-700 absolute right-10.5 bottom-1 bg-rose-400 hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    
                 </div>
+                <button type="submit" class="text-gray-700  bg-rose-400 hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800">Search</button>
 
 
                     

@@ -4,32 +4,32 @@ import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 import React from 'react'
 
-function Category() {
+function CategoryType() {
   return (
     <div className='flex space-x-4 justify-center mt-5 mb-5'>
       
 
-        <NavLink to = {'/cuisine/Italian'}
+        <NavLink to = {'/type/breakfast'}
         className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <FaPizzaSlice 
             className=''/>
-            <h4 className='ml-1'>Italian</h4>
+            <h4 className='ml-1'>breakfast</h4>
         </NavLink>
       
         <NavLink to = {'/type/salade'}
         className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <FaHamburger />
-            <h4>American</h4>
+            <h4>Salade</h4>
         </NavLink>
-        <NavLink to = {'/cuisine/Thai'}
+        <NavLink to = {'/type/snack'}
         className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <GiNoodles />
-            <h4>Thai</h4>
+            <h4>snack</h4>
         </NavLink>
-        <NavLink to = {'/cuisine/Japanese'}
+        <NavLink to = {'/type/dessert'}
         className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
             <GiChopsticks />
-            <h4>Japanese</h4>
+            <h4>dessert</h4>
         </NavLink>
     </div>
   )
@@ -79,23 +79,6 @@ const Slink = styled(NavLink)`
 
 
 `
-export default Category
 
-{/* <List>
-        <Slink to = {'/cuisine/Italian'}>
-            <FaPizzaSlice />
-            <h4>Italian</h4>
-        </Slink>
-        <Slink to = {'/cuisine/American'}>
-            <FaHamburger />
-            <h4>American</h4>
-        </Slink>
-        <Slink to = {'/cuisine/Thai'}>
-            <GiNoodles />
-            <h4>Thai</h4>
-        </Slink>
-        <Slink to = {'/cuisine/Japanese'}>
-            <GiChopsticks />
-            <h4>Japanese</h4>
-        </Slink>
-    </List> */}
+
+export default CategoryType
