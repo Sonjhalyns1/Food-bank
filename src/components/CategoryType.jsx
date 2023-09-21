@@ -10,26 +10,25 @@ function CategoryType() {
       
 
         <NavLink to = {'/type/breakfast'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <FaPizzaSlice 
-            className=''/>
-            <h4 className='ml-1'>breakfast</h4>
+        className="f flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>breakfast</h4>
         </NavLink>
       
-        <NavLink to = {'/type/salade'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <FaHamburger />
-            <h4>Salade</h4>
+        <NavLink to = {'/type/salad'}
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>Salad</h4>
         </NavLink>
         <NavLink to = {'/type/snack'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <GiNoodles />
-            <h4>snack</h4>
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>snack</h4>
         </NavLink>
         <NavLink to = {'/type/dessert'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <GiChopsticks />
-            <h4>dessert</h4>
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>dessert</h4>
         </NavLink>
     </div>
   )

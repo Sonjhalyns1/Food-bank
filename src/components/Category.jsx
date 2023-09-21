@@ -6,30 +6,29 @@ import React from 'react'
 
 function Category() {
   return (
-    <div className='flex space-x-4 justify-center mt-5 mb-5'>
+    <div className='flex space-x-3 justify-center mt-5 mb-5'>
       
 
         <NavLink to = {'/cuisine/Italian'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <FaPizzaSlice 
-            className=''/>
-            <h4 className='ml-1'>Italian</h4>
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className=' mt-1'>Italian</h4>
         </NavLink>
       
-        <NavLink to = {'/type/salade'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <FaHamburger />
-            <h4>American</h4>
+        <NavLink to = {'/type/American'}
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>American</h4>
         </NavLink>
         <NavLink to = {'/cuisine/Thai'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <GiNoodles />
-            <h4>Thai</h4>
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>Thai</h4>
         </NavLink>
         <NavLink to = {'/cuisine/Japanese'}
-        className="flex justify-center p-4 border border-rose-400 rounded-lg bg-rose-400 hover:bg-rose-500 hover:border-rose-600 border-3">
-            <GiChopsticks />
-            <h4>Japanese</h4>
+        className=" flex justify-center p-1 my-2 border border-rose-400 rounded-3xl bg-rose-400 hover:bg-rose-500 hover:border-rose-600 text-xs">
+            
+            <h4 className='mt-1'>Japanese</h4>
         </NavLink>
     </div>
   )

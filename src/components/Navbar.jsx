@@ -57,10 +57,10 @@ export default function Navbar() {
                         
                     </ul>
                 </div>
-                <div onClick={handleClick} className='md:hidden z-10'>
-                    {!nav ? <FaBars />: <FaTimes />}
+                <div onClick={handleClick} className='md:hidden z-30'>
+                    {!nav ? <FaBars />: <FaTimes className='text-2xl'/>}
                 </div>
-                <ul onClick={()=> handleClick} className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-[200px]  bg-rose-200 flex flex-col justify-center items-center'}>
+                <ul onClick={()=> handleClick} className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-[300px]  bg-rose-200 flex flex-col justify-center items-center'}>
                     <Search />
                     <Link  to = {"/"}
                             className={'cursor-pointer py-3 text-sm text-rose-300 font-semibold  border-b-[3px] border-b-transparent '} >
