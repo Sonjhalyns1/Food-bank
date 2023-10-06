@@ -150,7 +150,7 @@ export default function Profile() {
           </form>
           {meals.length > 0 && (
             <>
-            <h6 className='text-2xl text-rose-400 text-center font-semibold'>Saved Meals</h6>
+            <h6 className='text-2xl text-rose-400 text-center font-semibold '>Saved Meals</h6>
             <ul className='sm:grid sm:grid-cols-2 lg:grid-cols-3  '>
                 {meals.map((meal) =>(
                     <MealsItem 
@@ -195,7 +195,7 @@ const MealCard = styled.div`
 `;
 
 // useEffect(() => {
-//     // Function to fetch saved meals
+//  
 //     const fetchSavedMeals = async () => {
 //       try {
 //         const mealsQuery = query(
